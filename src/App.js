@@ -10,7 +10,8 @@ class App extends Component {
     }
     
     componentDidMount(){
-        axios.get(' http://localhost:3000/books')
+      axios.get('https://my-json-server.typicode.com/mariaost253/database/db')
+        //axios.get(' http://localhost:3000/books')
         .then(response =>{
           console.log(response);
         })
