@@ -5,10 +5,12 @@ import {SET_BOOKS} from "../actions";
 //    books: []
 //});
 
-function books(state =[], {type, payload}) {
-    switch (type) {
+//{type, payload}
+function books(state =[], action) {
+    switch (action.type) {
         case SET_BOOKS:
-            return {...state, ...payload};
+            return [...state, action.books];
+
         default:
             return state;
     }

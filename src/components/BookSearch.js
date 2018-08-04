@@ -3,7 +3,7 @@ import {connect} from 'react-redux';
 import axios from "axios";
 import {setBooks} from '../actions';
 import BookItem from './BookItem';
-import PropTypes from 'prop-types';
+//import PropTypes from 'prop-types';
 
 class BookSearch extends Component {
     constructor(){
@@ -29,7 +29,6 @@ class BookSearch extends Component {
 
     componentDidMount(){
       axios.get('./db.json')
-        
       .then(response => {this.props.setBooks(response.data)})
       //.then(response =>{
       //  console.log(response);
@@ -37,7 +36,15 @@ class BookSearch extends Component {
     }
     
     check(){
-   console.log(this.props.books);
+        
+        this.props.books.map((book,index)=>{
+            console.log('this',book);
+        return (
+            
+           <BookItem book={book} key={index}/>
+               );
+    })
+
     }
     
 
@@ -45,33 +52,23 @@ class BookSearch extends Component {
 render() {
     return (
         <div>
-          {
-    this.props.books.map(book=>{
-        return (
-            <div className='users-list-item' key={book.id}>
-                <div className='users-list-item--field'>
-                    {book.bookTitle}
-                </div>
-                <div className='users-list-item--field'>
-                    {book.authorName}
-                </div>
-
-            </div>
-        );
-    })
-}
-    </div>
+        {this.check()}
+        </div>
     );
   }
 }
 
-
+/*
 function mapStateToProps(state){
     console.log(state)
     return {
         books:state.books
 
     };
+}*/
+
+function mapStateToProps(state){
+    return state;
 }
 
 /*
