@@ -22,10 +22,6 @@ class AddBook extends Component {
         }
     }
 
-    //  normalizeTitle = ( title) => (
-    //     title.replace(/[^a-zA-Z\d\s:]/g, '')
-    //  );
-
     onSubmit(e) {
         e.preventDefault();
 
@@ -43,7 +39,6 @@ class AddBook extends Component {
 
     }
 
-    //const {bookTitle, dis, authorName, publishDate} = this.state;
     render() {
         return (
             <Form className="form-signin" onSubmit={(e) => this.onSubmit(e)}>

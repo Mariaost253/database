@@ -27,15 +27,13 @@ class AddBook extends Component {
 
          this.props.books.map(book => book.id === this.state.id ? this.state.books : book);
         axios.post('https://my-json-server.typicode.com/Mariaost253/FakeApiDbBooks/books')
-            // .then(({data}) => setBooks(data))
-            // .then(response => {this.props.editBookById(response.data)})
-            .then(response => console.log(response.data))
+        .then(response => { this.props.setBooks(response.data) })
     }
 
 
     render() {
         return (
-            <form className="form-signin form-edit" onSubmit={(e) => this.onSubmit(e)}>
+            <form className=" form-signin" onSubmit={(e) => this.onSubmit(e)}>
                 <div className="text-center mb-4">
                     <h1 className="h3 mb-3 font-weight-normal">Edit Book</h1>
                     <p>Here you edit your book</p>

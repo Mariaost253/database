@@ -12,9 +12,6 @@ import '../styles/App.css';
 class BookSearch extends Component {
     constructor() {
         super();
-        this.handleShow = this.handleShow.bind(this);
-        this.handleHide = this.handleHide.bind(this);
-
         this.state = {
             isReady: false,
             isErrorDialogOpen: false,
